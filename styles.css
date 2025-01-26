@@ -25,7 +25,7 @@ button {
     background-color: #007BFF;
     color: white;
     transition: background-color 0.3s;
-    background-image: url('flower-pattern.png'); /* Add a floral pattern image */
+    background-image: url('flower-pattern.png');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -34,7 +34,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
-    background-image: url('flower-pattern-hover.png'); /* Optional: Different pattern on hover */
+    background-image: url('flower-pattern-hover.png');
 }
 
 #imagesContainer {
@@ -51,6 +51,7 @@ button:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* This ensures that images are hidden by default */
 .hidden {
     display: none;
 }
