@@ -1,12 +1,20 @@
-// Ensure the DOM is fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the button and images container by their IDs
-    const showWishesButton = document.getElementById('showWishesButton');
+    const factButton = document.getElementById('fact-button');
+    const factDisplay = document.getElementById('fact-display');
     const imagesContainer = document.getElementById('imagesContainer');
 
-    // Add a click event listener to the button
-    showWishesButton.addEventListener('click', function() {
-        // Toggle the 'hidden' class on the images container
+    // Add an event listener for button click
+    factButton.addEventListener('click', function() {
+        console.log("Button clicked");
+
+        // Toggle the visibility of the images container
         imagesContainer.classList.toggle('hidden');
+
+        // Toggle the text of the fact display
+        if (imagesContainer.classList.contains('hidden')) {
+            factDisplay.textContent = "Click the button to see anniversary images!";
+        } else {
+            factDisplay.textContent = "Here are the anniversary images!";
+        }
     });
 });
