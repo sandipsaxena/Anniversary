@@ -45,11 +45,23 @@
             display: none;
             margin-top: 20px;
         }
+
+        /* Styled text for "Happy Marriage Anniversary" */
+        h1 {
+            background: linear-gradient(90deg, #FF9933, #ffffff 33%, #138808 66%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for smoother edges */
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <button id="wish-button" class="fact-button">Happy Marriage Anniversary</button>
+        <h1>Happy Marriage Anniversary</h1>
+        <button id="wish-button" class="fact-button">Show Wishes</button>
         <img id="bro-image" src="bro.jpeg?random=" alt="Bro Image" />
         <img id="di-image" src="di.jpeg?random=" alt="Di Image" />
     </div>
