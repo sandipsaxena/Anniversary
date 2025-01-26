@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app">
-        <button id="showWishesButton">Happy Marriage Anniversary</button>
-        <!-- Initially hidden images container -->
+    <div class="container">
+        <h1>Happy Marriage Anniversary</h1>
+        <div id="fact-display" class="fact-display">
+            Click the button to see anniversary images!
+        </div>
+        <button id="fact-button" class="fact-button">Show Anniversary Wishes</button>
+
         <div id="imagesContainer" class="hidden">
-            <img src="di.jpeg" alt="Didi and Jijaji" class="anniversary-image">
-            <img src="bro.jpeg" alt="Brother" class="anniversary-image">
+            <img src="di.webp" alt="Didi and Jijaji" class="anniversary-image">
+            <img src="bro.webp" alt="Brother" class="anniversary-image">
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
