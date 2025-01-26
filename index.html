@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <title>Happy Marriage Anniversary</title>
     <!-- Import Aptos font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;500;600&display=swap" rel="stylesheet">
@@ -96,6 +99,14 @@
             imageContainer.appendChild(broImage);
             imageContainer.appendChild(diImage);
 
+            // Add random query parameter to force fresh loading
+            broImage.src = "bro.jpeg?random=" + new Date().getTime();
+            diImage.src = "di.jpeg?random=" + new Date().getTime();
+
+            // Show the images
+            broImage.style.display = 'block';
+            diImage.style.display = 'block';
+            
             // Hide the "Show Wishes" button
             document.getElementById('fact-button').style.display = 'none';
         });
