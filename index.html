@@ -3,23 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anniversary Wishes</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wishes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .fact-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .fact-button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Anniversary Wishes</h1>
-        
-        <!-- Step 1: Show the "Push" button -->
-        <button id="pushButton" class="fact-button">Push</button>
-
-        <!-- Images will be hidden initially -->
+        <h1>Happy Wishes!</h1>
+        <div id="wish-display" class="fact-display">
+            Click the button to see a random wish!
+        </div>
+        <button id="wish-button" class="fact-button">Show Random Wish</button>
         <div id="imagesContainer" class="hidden">
-            <img src="di.jpeg" alt="Didi and Jijaji" class="anniversary-image">
-            <img src="bro.jpeg" alt="Brother" class="anniversary-image">
+            <img src="image1.jpg" class="anniversary-image" alt="Image 1">
+            <img src="image2.jpg" class="anniversary-image" alt="Image 2">
+            <img src="image3.jpg" class="anniversary-image" alt="Image 3">
         </div>
     </div>
+    <script>
+        const wishes = [
+            {
+                wish: "Wishing you a year filled with love, laughter, and joy!",
+                detail: "May your days be as bright as your smile, and your heart as light as your spirit."
+            },
+            {
+                wish: "May this year bring new happiness, new goals, and new achievements!",
+                detail: "Here’s to the best year of your life yet!"
+            },
+            {
+                wish: "Wishing you a day filled with love and cheer!",
+                detail: "May all your dreams and wishes come true today and always."
+            },
+            {
+                wish: "Here's to another year of success and happiness!",
+                detail: "May your journey ahead be filled with peace and prosperity."
+            },
+            {
+                wish: "Wishing you all the best for the coming year!",
+                detail: "May you continue to shine and make the world a better place."
+            }
+        ];
 
-    <script src="script.js"></script>
+        // Initially hide the images
+        document.getElementById('imagesContainer').classList.add('hidden');
+
+        document.getElementById('wish-button').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * wishes.length);
+            const randomWish = wishes[randomIndex];
+            document.getElementById('wish-display').innerHTML = `<strong>${randomWish.wish}:</strong> ${randomWish.detail}`;
+            
+            // Show images after button click
+            document.getElementById('imagesContainer').classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>
