@@ -8,7 +8,7 @@ body {
     background-color: #f0f0f0;
 }
 
-#app {
+.container {
     text-align: center;
     background-color: #fff;
     padding: 20px;
@@ -22,14 +22,13 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF; /* Simple blue background */
+    background-color: #007BFF;
     color: white;
     transition: background-color 0.3s;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade of blue on hover */
+    background-color: #0056b3;
 }
 
 #imagesContainer {
@@ -46,7 +45,28 @@ button:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* This ensures that images are hidden by default */
 .hidden {
     display: none;
+}
+
+.fact-display {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.fact-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.fact-button:hover {
+    background-color: #0056b3;
 }
