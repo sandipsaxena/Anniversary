@@ -30,6 +30,15 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow around the container */
         }
 
+        /* Style for the "Happy Marriage Anniversary" text with tri-color */
+        h1 {
+            background: linear-gradient(90deg, #FF9933, #ffffff 33%, #138808 66%); /* Gradient from Indian flag's colors */
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
         #image-container img {
             width: 100%; /* Adjust width to fit the container */
             max-width: 500px; /* Limit the maximum size */
@@ -63,7 +72,7 @@
 <body>
     <div class="container">
         <h1>Happy Marriage Anniversary</h1>
-        <button id="fact-button" class="fact-button">Show Images</button>
+        <button id="fact-button" class="fact-button">Show Wishes</button>
         <div id="image-container"></div>
     </div>
 
@@ -86,6 +95,9 @@
             // Append images to the container
             imageContainer.appendChild(broImage);
             imageContainer.appendChild(diImage);
+
+            // Hide the "Show Wishes" button
+            document.getElementById('fact-button').style.display = 'none';
         });
     </script>
 </body>
