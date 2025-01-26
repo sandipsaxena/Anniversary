@@ -31,20 +31,20 @@ button:hover {
     background-color: #0056b3;
 }
 
-#wishesContainer {
+#imagesContainer {
     margin-top: 20px;
-    font-size: 18px;
-    color: #333;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
-.wish {
-    background-color: #ffebcd;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+.anniversary-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.wish strong {
-    color: #d2691e;
+.hidden {
+    display: none;
 }
