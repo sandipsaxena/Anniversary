@@ -23,12 +23,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .fact-display {
-            margin: 20px 0;
-            font-size: 18px;
-            color: #333;
-        }
-
         .fact-button {
             padding: 10px 20px;
             font-size: 16px;
@@ -47,55 +41,42 @@
         .hidden {
             display: none;
         }
+
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Happy Wishes!</h1>
-        <div id="wish-display" class="fact-display">
-            Click the button to see a random wish!
-        </div>
-        <button id="wish-button" class="fact-button">Show Random Wish</button>
-        <div id="imagesContainer" class="hidden">
-            <img src="image1.jpg" class="anniversary-image" alt="Image 1">
-            <img src="image2.jpg" class="anniversary-image" alt="Image 2">
-            <img src="image3.jpg" class="anniversary-image" alt="Image 3">
+        <button id="wish-button" class="fact-button">Show Images</button>
+        <div id="imagesContainer" class="image-container hidden">
+            <img src="bro.jpeg" alt="Bro Image">
+            <img src="di.jpeg" alt="Di Image">
         </div>
     </div>
+
     <script>
-        const wishes = [
-            {
-                wish: "Wishing you a year filled with love, laughter, and joy!",
-                detail: "May your days be as bright as your smile, and your heart as light as your spirit."
-            },
-            {
-                wish: "May this year bring new happiness, new goals, and new achievements!",
-                detail: "Here’s to the best year of your life yet!"
-            },
-            {
-                wish: "Wishing you a day filled with love and cheer!",
-                detail: "May all your dreams and wishes come true today and always."
-            },
-            {
-                wish: "Here's to another year of success and happiness!",
-                detail: "May your journey ahead be filled with peace and prosperity."
-            },
-            {
-                wish: "Wishing you all the best for the coming year!",
-                detail: "May you continue to shine and make the world a better place."
+        // Function to toggle images visibility
+        function toggleImages() {
+            const imagesContainer = document.getElementById('imagesContainer');
+            if (imagesContainer.classList.contains('hidden')) {
+                // Show images
+                imagesContainer.classList.remove('hidden');
+            } else {
+                // Remove images
+                imagesContainer.classList.add('hidden');
             }
-        ];
+        }
 
         // Initially hide the images
         document.getElementById('imagesContainer').classList.add('hidden');
 
         document.getElementById('wish-button').addEventListener('click', () => {
-            const randomIndex = Math.floor(Math.random() * wishes.length);
-            const randomWish = wishes[randomIndex];
-            document.getElementById('wish-display').innerHTML = `<strong>${randomWish.wish}:</strong> ${randomWish.detail}`;
-            
-            // Show images after button click
-            document.getElementById('imagesContainer').classList.remove('hidden');
+            // Toggle images after button click
+            toggleImages();
         });
     </script>
 </body>
