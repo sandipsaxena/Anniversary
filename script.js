@@ -11,5 +11,5 @@ document.getElementById('showWishesButton').addEventListener('click', function()
     ];
 
     const wishesContainer = document.getElementById('wishesContainer');
-    wishesContainer.innerHTML = wishes.map(wish => `<p><strong>${wish.name}:</strong> ${wish.wish}</p>`).join('');
+    wishesContainer.innerHTML = wishes.map(wish => `<div class="wish"><p><strong>${wish.name}:</strong> ${wish.wish}</p></div>`).join('');
 });
