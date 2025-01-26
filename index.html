@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <title>Display Image</title>
+    <title>Happy Marriage Anniversary</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
         }
 
         .container {
@@ -24,6 +22,13 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #image-container img {
+            width: 100%; /* Adjust width to fit the container */
+            max-width: 500px; /* Limit the maximum size */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px;
         }
 
         .fact-button {
@@ -40,25 +45,34 @@
         .fact-button:hover {
             background-color: #0056b3;
         }
-
-        #image {
-            display: none;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <button id="wish-button" class="fact-button">Show Image</button>
-        <img id="image" src="bro.jpeg?random=" alt="Bro Image">
+        <h1>Happy Marriage Anniversary</h1>
+        <button id="fact-button" class="fact-button">Show Images</button>
+        <div id="image-container"></div>
     </div>
 
     <script>
-        document.getElementById('wish-button').addEventListener('click', () => {
-            const image = document.getElementById('image');
-            // Adding random query parameter to force fresh loading of the image
-            image.src = "bro.jpeg?random=" + new Date().getTime(); 
-            image.style.display = 'block'; // Show the image
+        document.getElementById('fact-button').addEventListener('click', () => {
+            // Create image elements
+            const imageContainer = document.getElementById('image-container');
+            imageContainer.innerHTML = ""; // Clear previous images
+
+            // Create and display 'bro.jpeg'
+            const broImage = document.createElement('img');
+            broImage.src = 'bro.jpeg'; // Ensure the path is correct
+            broImage.alt = 'Bro Image';
+
+            // Create and display 'di.jpeg'
+            const diImage = document.createElement('img');
+            diImage.src = 'di.jpeg'; // Ensure the path is correct
+            diImage.alt = 'Di Image';
+
+            // Append images to the container
+            imageContainer.appendChild(broImage);
+            imageContainer.appendChild(diImage);
         });
     </script>
 </body>
