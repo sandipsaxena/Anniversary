@@ -62,12 +62,16 @@
         // Function to toggle images visibility
         function toggleImages() {
             const imagesContainer = document.getElementById('imagesContainer');
+            const button = document.getElementById('wish-button');
+
             if (imagesContainer.classList.contains('hidden')) {
-                // Show images
+                // Show images and hide content
                 imagesContainer.classList.remove('hidden');
+                button.textContent = 'Hide Images';
             } else {
-                // Remove images
+                // Hide images
                 imagesContainer.classList.add('hidden');
+                button.textContent = 'Show Images';
             }
         }
 
