@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishes</title>
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Display Image</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,49 +41,24 @@
             background-color: #0056b3;
         }
 
-        .hidden {
+        #image {
             display: none;
-        }
-
-        .image-container img {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <button id="wish-button" class="fact-button">Show Images</button>
-        <div id="imagesContainer" class="image-container hidden">
-            <img src="bro.jpeg" alt="Bro Image">
-            <img src="di.jpeg" alt="Di Image">
-        </div>
+        <button id="wish-button" class="fact-button">Show Image</button>
+        <img id="image" src="bro.jpeg?random=" alt="Bro Image">
     </div>
 
     <script>
-        // Function to toggle images visibility
-        function toggleImages() {
-            const imagesContainer = document.getElementById('imagesContainer');
-            const button = document.getElementById('wish-button');
-
-            if (imagesContainer.classList.contains('hidden')) {
-                // Show images and hide content
-                imagesContainer.classList.remove('hidden');
-                button.textContent = 'Hide Images';
-            } else {
-                // Hide images
-                imagesContainer.classList.add('hidden');
-                button.textContent = 'Show Images';
-            }
-        }
-
-        // Initially hide the images
-        document.getElementById('imagesContainer').classList.add('hidden');
-
         document.getElementById('wish-button').addEventListener('click', () => {
-            // Toggle images after button click
-            toggleImages();
+            const image = document.getElementById('image');
+            // Adding random query parameter to force fresh loading of the image
+            image.src = "bro.jpeg?random=" + new Date().getTime(); 
+            image.style.display = 'block'; // Show the image
         });
     </script>
 </body>
